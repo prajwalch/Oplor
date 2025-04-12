@@ -25,15 +25,14 @@ import com.prajwalch.oplor.data.DirEntry
 import com.prajwalch.oplor.data.DirEntryType
 
 @Composable
-fun DirEntryList(modifier: Modifier = Modifier) {
-    val dirEntries = listOf(
-        DirEntry("Downloads", "2.02 MB", "Fri, 2025", DirEntryType.Dir),
-        DirEntry("MainActivity.kt", "2.00 MB", "Fri, 2020", DirEntryType.File)
-    )
-
+fun DirEntryList(
+    dirEntries: List<DirEntry>,
+    onEntryClick: (DirEntry) -> Unit,
+    modifier: Modifier = Modifier
+) {
     LazyColumn(modifier = modifier) {
         items(dirEntries) {
-            DirEntryListItem(dirEntry = it, onClick = {})
+            DirEntryListItem(dirEntry = it, onClick = { onEntryClick(it) })
         }
     }
 }
