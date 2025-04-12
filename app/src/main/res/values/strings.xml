@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Oplor</string>
+    <string name="navigation_icon_button">Navigation icon button</string>
+    <string name="settings_icons_button">Settings icons button</string>
 </resources>
